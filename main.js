@@ -1,7 +1,5 @@
 const musicUrl = "https://spmdl.github.io/json-files/rain.mp3";
 
-// audioElement.play();
-
 const limitRange = (num) => {
   const target = num.toFixed(1);
   return Math.min(Math.max(target, 0), 1);
@@ -39,7 +37,7 @@ window.onload = function () {
     );
     const progress = Math.round(audioElement.currentTime);
     progressBar.value = progress;
-    console.log("progressBar.value", progressBar.value);
+    // console.log("progressBar.value", progressBar.value);
     document.getElementById("progress-line").style.width =
       (progress / duration).toFixed(2) * 100 + "%";
   };
