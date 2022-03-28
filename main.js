@@ -28,13 +28,14 @@ window.onload = function () {
   const audioElement = new Audio(musicUrl);
   audioElement.addEventListener("loadeddata", () => {
     duration = audioElement.duration;
-    document.getElementById("timeLeft").innerText = transTime(duration);
   });
 
   const progressBar = document.getElementById("progress");
   const setBar = () => {
-    document.getElementById("timeSpent").innerText = transTime(
-      Math.round(audioElement.currentTime)
+    const currentTime = transTime(Math.round(audioElement.currentTime));
+    document.getElementById("timeSpent").innerText = currentTime;
+    document.getElementById("timeLeft").innerText = transTime(
+      Math.round(duration) - Math.round(audioElement.currentTime)
     );
     const progress = Math.round(audioElement.currentTime);
     progressBar.value = progress;
@@ -96,7 +97,7 @@ window.onload = function () {
     "click",
     () => {
       audioElement.currentTime = Math.floor(audioElement.currentTime) - 2;
-      console.log("audioElement.currentTime", audioElement.currentTime)
+      console.log("audioElement.currentTime", audioElement.currentTime);
     },
     false
   );
@@ -105,7 +106,7 @@ window.onload = function () {
     "click",
     () => {
       audioElement.currentTime = Math.floor(audioElement.currentTime) + 2;
-      console.log("audioElement.currentTime", audioElement.currentTime)
+      console.log("audioElement.currentTime", audioElement.currentTime);
     },
     false
   );
@@ -150,8 +151,11 @@ window.onload = function () {
     console.log("ended", event);
     clearInterval(timer);
     document.getElementById("timeSpent").innerText = transTime(0);
+    document.getElementById("timeLeft").innerText = transTime(
+      Math.round(duration)
+    );
     progressBar.value = 0;
-    document.getElementById("progress-line").style.width = '0%';
+    document.getElementById("progress-line").style.width = "0%";
     document.getElementById("play").innerHTML = '<i class="fas fa-play"></i>';
   });
 };
