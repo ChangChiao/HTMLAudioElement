@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+    <link rel="stylesheet" href="./style.css">  
+    <title>Document</title>
+    <script src="./main.js"></script>
+</head>
+<body>
+    <div class="min-h-screen">
+        <!-- <audio id="audio" controls src="https://spmdl.github.io/json-files/rain.mp3"></audio> -->
+        <div class="container my-0 mx-auto">
+          <div class="min-h-screen flex flex-col items-center justify-center">
+            <div class="flex items-center w-full rounded-lg bg-stone-900 text-stone-300 md:px-0 px-2">
+              <span id="timeSpent" class="w-[70px] py-1.5 px-2.5">00:00</span>
+              <div class="relative w-full">
+                <input id="progress" class="progress-range w-full opacity-0" type="range" min="0" max="13.5" step="1" value="0"/>
+                <div class="progress-bg"></div>
+                <div class="progress-line" id="progress-line"></div>
+              </div>
+              <span id="timeLeft" class="w-[70px] py-1.5 px-2.5"></span>
+            </div>
+            <div class="w-full sm:w-3/5 flex justify-between my-0 mx-auto">
+              <button type="button" id="back" class="w-[40px] py-1 px-2.5">
+                <i class="fa-solid fa-rotate-left"></i>
+              </button>
+              <button type="button" id="play" class="w-[40px] py-1 px-2.5">
+                <i class="fas fa-play"></i>
+              </button>
+              <button type="button" id="forward" class="w-[40px] py-1 px-2.5">
+                <i class="fa-solid fa-rotate-right"></i>
+              </button>
+              <button type="button" id="volumeHigh" class="w-[40px] py-1 px-2.5">
+                <i class="fa-solid fa-plus"></i>
+              </button>
+              <button type="button" id="volume" class="w-[40px] py-1 px-2.5">
+                <i class="fa-solid fa-volume-high"></i>
+              </button>
+              <button type="button" id="volumeLow" class="w-[40px] py-1 px-2.5">
+                <i class="fa-solid fa-minus"></i>
+              </button>
+              <button type="button" id="speed" class="w-[80px] text-left py-1 px-2.5">
+                <i class="fa-solid fa-forward"></i> x1
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+</body>
+</html>
